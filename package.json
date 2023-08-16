@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Diego França <diego.franca92@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "fullstack",
+    "app"
+  ],
+  "scripts": {
+    "dev:fullstack": "(yarn workspace @portfolio/fullstack dev)",
+    "dev:app": "(yarn workspace @portfolio/app start:dev)",
+    "build:fullstack": "(yarn workspace @portfolio/fullstack build)",
+    "build:app": "(yarn workspace @portfolio/app build)"
+  }
+}
