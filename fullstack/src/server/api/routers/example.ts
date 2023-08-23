@@ -18,6 +18,22 @@ export const exampleRouter = createTRPCRouter({
     return ctx.prisma.example.findMany();
   }),
 
+  getProfile: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.profile.findMany();
+  }),
+
+  getAllExperiences: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.experience.findMany();
+  }),
+
+  getExperienceById: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.experience.findFirst();
+  }),
+
+  getAllSkills: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.skill.findMany();
+  }),
+
   getSecretMessage: protectedProcedure.query(() => {
     return "you can now see this secret message!";
   }),
