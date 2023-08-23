@@ -20,6 +20,76 @@ model Example {
     updatedAt DateTime @updatedAt
 }
 
+model Skill {
+    id           String      @id @default(cuid())
+    name         String
+    duration     String
+    Experience   Experience? @relation(fields: [experienceId], references: [id])
+    experienceId String?
+    Project      Project?    @relation(fields: [projectId], references: [id])
+    projectId    String?
+}
+
+model Experience {
+    id         String    @id @default(cuid())
+    createdAt  DateTime  @default(now())
+    updatedAt  DateTime  @updatedAt
+    name       String
+    position   String
+    skills     Skill[]
+    location   String
+    company    Company   @relation(fields: [companyId], references: [id])
+    companyId  String
+    projects   Project[]
+    duration   String
+    promotions String
+}
+
+model Profile {
+    id          String    @id @default(cuid())
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+    name        String
+    role        String
+    bio         String
+    location    String
+    formation   Formation @relation(fields: [formationId], references: [id])
+    formationId String
+}
+
+model Company {
+    id         String       @id @default(cuid())
+    name       String
+    image      String
+    contract   String
+    site       String
+    Project    Project[]
+    Experience Experience[]
+}
+
+model Formation {
+    id         String    @id @default(cuid())
+    name       String
+    college    String
+    conclusion String
+    thumbnail  String
+    Profile    Profile[]
+}
+
+model Project {
+    id           String      @id @default(cuid())
+    createdAt    DateTime    @default(now())
+    updatedAt    DateTime    @updatedAt
+    name         String
+    description  String
+    skills       Skill[]
+    link         String
+    company      Company     @relation(fields: [companyId], references: [id])
+    companyId    String
+    Experience   Experience? @relation(fields: [experienceId], references: [id])
+    experienceId String?
+}
+
 // Necessary for Next auth
 model Account {
     id                String  @id @default(cuid())
