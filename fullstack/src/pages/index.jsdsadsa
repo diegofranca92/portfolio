@@ -1,0 +1,73 @@
+import Head from 'next/head'
+import { Row, Col, Stack } from 'react-bootstrap'
+import React from 'react'
+import CardBio from './components/CardBio'
+import Footer from './components/Footer'
+import MainContent from './components/MainContent'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import Load from './components/Load'
+import Avatar from './components/Avatar'
+import {profile} from '../db/db'
+
+
+function HomePage() {
+  const [perfil, setPerfil] = useState({})
+  const [loading, setLoading] = useState(false)
+  async function getBio() {
+    setLoading(true)
+    // try {
+    //   const { data } = await axios.get(
+    //     `${process.env.NEXT_PUBLIC_BASE_URL}/perfil`,
+    //     {
+    //       headers: {
+    //         apikey: process.env.NEXT_PUBLIC_API_KEY,
+    //         Authorization: process.env.NEXT_PUBLIC_TOKEN
+    //       }
+    //     }
+    //   )
+
+    //   setPerfil(data[0])
+    // } catch (error) {
+    //   console.log(error)
+    // }
+    setPerfil(profile)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    getBio()
+  }, [])
+
+  return (
+    <>
+      <Head>
+        <title>Diego França Dev</title>
+        <meta
+          name='description'
+          content='Conheça um pouco sobre o profissional Desenvolvedor Diego França'
+        />
+        <link rel='icon' href='/favicon/favicon.ico' />
+      </Head>
+      {(loading && <Load />) ||
+        (!loading && (
+          <div className='bg-dark vh-100'>
+            <Stack gap={5} className='bg-dark container-xxl'>
+              <Row className='p-3'>
+                <Col md={4} className='text-light text-center'>
+                  <Avatar perfil={perfil} />
+                </Col>
+                <Col md={8}>
+                  <CardBio perfil={perfil} />
+                </Col>
+              </Row>
+              <MainContent />
+              <Footer />
+            </Stack>
+          </div>
+        ))}
+    </>
+  )
+}
+
+export default HomePage

@@ -1,0 +1,499 @@
+import lyncasLogo from '../assets/images/lyncas.jpeg'
+import ilegraLogo from '../assets/images/ilegra.jpeg'
+import hurbLogo from '../assets/images/hurb.jpeg'
+import crowdLogo from '../assets/images/crowd.jpeg'
+import imapLogo from '../assets/images/imap.jpeg'
+import flashLogo from '../assets/images/flash.jpeg'
+import softwellLogo from '../assets/images/softwell.jpeg'
+import dmsifThumb from '../assets/images/dmsif.png'
+import carreiraIlegraThumb from '../assets/images/carreira-ilegra.png'
+import issBancosThumb from '../assets/images/issbancos.png'
+import okrThumb from '../assets/images/okr.png'
+import guruThumb from '../assets/images/guru.png'
+import flashThumb from '../assets/images/flash.png'
+import assojafThumb from '../assets/images/assojaf.png'
+import hellooAppThumb from '../assets/images/hellooapp.png'
+
+const experiences = [
+  {
+    id: 1,
+    position: 'Frontend Developer',
+    skills: ['Svelte', 'Storybook', 'Jest', 'Vitest'],
+    description:
+      'Svelte + Storybook + Jest (Testes de Unidade) \n Trabalhei na equipe de inovação construindo componentes para uso em um novo produto',
+    company: {
+      name: 'Hurb',
+      image: hurbLogo,
+      contract: 'PJ',
+      site: 'https://www.hurb.com/br'
+    },
+    duration: {
+      begin: {
+        mes: 'jul',
+        ano: '2022'
+      },
+      finish: {
+        mes: 'abr',
+        ano: '2023'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: '',
+        description: '',
+        skills: []
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  },
+  {
+    id: 2,
+    position: 'Frontend Developer',
+    skills: ['Vue', 'Vuex', 'Vuetify', 'Bootstrap Vue'],
+    description:
+      'Desenvolvimento de Sistema com Vue.js, Vuetify, Bootstrap Vue. Trabalhei na equipe de Outsourcing. \n Trabalhando com um cliente ajudei a implementar uma nova funcionalidade na máquina de cartão de crédito',
+    company: {
+      name: 'Lyncas',
+      image: lyncasLogo,
+      contract: 'CLT',
+      site: 'https://lyncas.net/'
+    },
+    duration: {
+      begin: {
+        mes: 'ago',
+        ano: '2022'
+      },
+      finish: {
+        mes: 'fev',
+        ano: '2023'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: '',
+        description: '',
+        skills: []
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  },
+  {
+    id: 3,
+    position: 'Frontend Developer',
+    skills: ['Vue', 'Vuex', 'Vuetify', 'Bootstrap Vue'],
+    description:
+      'Desenvolvimento e manutenção de sistemas web utilizando AngularJS, Vue 2 e Vue 3. \n Criação de documentação para o Designer System do cliente (HTML e SASS).',
+    company: {
+      name: 'Ilegra',
+      image: ilegraLogo,
+      contract: 'CLT',
+      site: 'https://ilegra.com/'
+    },
+    duration: {
+      begin: {
+        mes: 'set',
+        ano: '2021'
+      },
+      finish: {
+        mes: 'ago',
+        ano: '2022'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: 'Página de Carreiras',
+        description: '',
+        skills: ['HTML', 'CSS'],
+        link: 'https://ilegra.com/carreira'
+      },
+      {
+        name: "OKR's Manager",
+        description: '',
+        skills: ['AngularJS', 'Angular Material', 'TailwindCSS'],
+        link: 'http://okr.ilegra.com/'
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  },
+  {
+    id: 4,
+    position: 'React Native Developer',
+    skills: [
+      'Typescript',
+      'React Native',
+      'Expo',
+      'Expo Push notifications',
+      'Styled components',
+      'Swr',
+      'Axios',
+      'Firebase',
+      'Algolia',
+      'Husky'
+    ],
+    description:
+      'Colaborei na criação de aplicativo mobile hibrido para gerenciamento de anuncios de condominios.',
+    company: {
+      name: 'CROWD',
+      image: crowdLogo,
+      contract: 'PJ',
+      site: 'https://crowd.br.com/'
+    },
+    duration: {
+      begin: {
+        mes: 'abr',
+        ano: '2021'
+      },
+      finish: {
+        mes: 'dez',
+        ano: '2021'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: 'App Helloo Condominio',
+        description: '',
+        skills: ['HTML', 'CSS'],
+        link: 'https://play.google.com/store/apps/details?id=com.helloorg.helloo.condominio.production&hl=pt_BR&gl=US'
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  },
+  {
+    id: 5,
+    position: 'Frontend Analyst',
+    skills: [
+      'HTML',
+      'CSS',
+      'Bootstrap',
+      'Javascript',
+      'Jquery',
+      'Coldfusion(CFML)'
+    ],
+    description:
+      'Criação e manutenção do Layout das telas internas dos sistemas Web, utilizando HTML + CSS + bootstrap + Javascript + Jquery + Coldfusion(CFML)',
+    company: {
+      name: 'IMAP',
+      image: imapLogo,
+      contract: 'CLT',
+      site: 'https://imap.org.br/'
+    },
+    duration: {
+      begin: {
+        mes: 'jan',
+        ano: '2021'
+      },
+      finish: {
+        mes: 'ago',
+        ano: '2021'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: 'App Helloo Condominio',
+        description: '',
+        skills: ['HTML', 'CSS'],
+        link: 'https://play.google.com/store/apps/details?id=com.helloorg.helloo.condominio.production&hl=pt_BR&gl=US'
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  },
+  {
+    id: 6,
+    position: 'Frontend Developer',
+    skills: [
+      'HTML',
+      'CSS',
+      'Bootstrap',
+      'Javascript',
+      'Jquery',
+      'Codeigniter',
+      'PHP',
+      'Cypress',
+      'Echarts',
+      'Bootstrap Tables'
+    ],
+    description:
+      'Trabalhei na Startup Flash Delivery na Criação e Desenvolvimento do Layout do Sistema Web onde desenvolvi a parte visual do sistema interno em menos de 15 dias, esse foi um dos motivos pelo qual fui contratado para dar continuidade na manutenção e redesenho da Home página com a minha entrada na empresa. Tecnologias que usei: HTML5 + CSS3 + JS + JQuery + Bootstrap + Echarts - Bootstrap Tables + Codeigniter + PHP. Testes de integração automatizados usando Cypress(testes e2e)',
+    company: {
+      name: 'Flash Entregas',
+      image: flashLogo,
+      contract: 'PJ',
+      site: 'https://www.flashentregas.com.br/'
+    },
+    duration: {
+      begin: {
+        mes: 'mai',
+        ano: '2020'
+      },
+      finish: {
+        mes: 'nov',
+        ano: '2020'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: 'App Helloo Condominio',
+        description: '',
+        skills: ['HTML', 'CSS'],
+        link: 'https://play.google.com/store/apps/details?id=com.helloorg.helloo.condominio.production&hl=pt_BR&gl=US'
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  },
+  {
+    id: 7,
+    position: 'Jr Systems Analyst',
+    skills: ['HTML', 'CSS', 'Bootstrap', 'Javascript', 'Jquery', 'Materialize'],
+    description:
+      'Na Softwell Solutions fui responsável pela manutenção e melhoria dos produtos - Maker Studio e Maker Mobile para Sistemas Web e Mobile e Criação de Layouts para WEB e Sistemas Híbridos Mobile (WebView) Tecnologias utilizadas: HTML5 + CSS3 + JS + JQuery + Bootstrap + Materialize',
+    company: {
+      name: 'Softwell Solutions',
+      image: softwellLogo,
+      contract: 'CLT',
+      site: 'https://www.linkedin.com/company/softwell-solutions-ltda.?originalSubdomain=br'
+    },
+    duration: {
+      begin: {
+        mes: 'jun',
+        ano: '2019'
+      },
+      finish: {
+        mes: 'mai',
+        ano: '2020'
+      },
+      moment: false
+    },
+    projects: [
+      {
+        name: 'App Helloo Condominio',
+        description: '',
+        skills: ['HTML', 'CSS'],
+        link: 'https://play.google.com/store/apps/details?id=com.helloorg.helloo.condominio.production&hl=pt_BR&gl=US'
+      }
+    ],
+    promotions: [
+      {
+        position: '',
+        description: '',
+        duration: {
+          begin: '',
+          finish: '',
+          moment: true
+        }
+      }
+    ]
+  }
+]
+const profile = {
+  id: 1,
+  name: 'Diego França',
+  role: 'Desenvolvedor Frontend',
+  bio: 'Sou Analista de Sistemas formado e atuo como Desenvolvedor Frontend há mais de 4 anos. Ultimamente tenho explorado as áreas de Backend e Mobile. Já trabalhei com os principais frameworks de cada área, no Frontend: React, Angular, Vue e Svelte, no backend: Express e Nest e no Mobile Flutter e React Native, e mais algumas coisas como Docker, Ci/CD , TailwindCSS, Bootstrap e outras tecnologias.',
+  skills: ['React', 'Vue', 'AngularJS', 'React Native', 'Flutter', 'Node'],
+  location: 'São Francisco do Conde',
+  formation: {
+    name: 'Analista e Desenvolvedor de Sistemas',
+    college: 'UNIJORGE',
+    conclusion: '2015'
+  },
+  contacts: null,
+  atual_position: {
+    name: 'Desenvolvedor Frontend',
+    company: null
+  }
+}
+
+const projects = [
+  {
+    id: 1,
+    name: 'Página de Carreiras Ilegra',
+    description: '',
+    skills: ['HTML', 'CSS'],
+    thumbnail: carreiraIlegraThumb,
+    link: 'https://ilegra.com/carreira',
+    company: {
+      name: 'Ilegra',
+      image: ilegraLogo,
+      contract: 'CLT',
+      site: ''
+    }
+  },
+  // {
+  //   id: 2,
+  //   name: "OKR's Manager",
+  //   description: '',
+  //   skills: ['AngularJS', 'Angular Material', 'TailwindCSS'],
+  //   thumbnail: okrThumb,
+  //   link: 'http://okr.ilegra.com/',
+  //   company: {
+  //     name: 'Ilegra',
+  //     image: ilegraLogo,
+  //     contract: 'CLT',
+  //     site: ''
+  //   }
+  // },
+  {
+    id: 3,
+    name: 'Guru Investimentos',
+    description: '',
+    skills: ['HTML', 'CSS', 'Javascript', 'Bootstrap'],
+    thumbnail: guruThumb,
+    link: 'https://gurusite.netlify.app/',
+    company: {
+      name: null,
+      image: null,
+      contract: null,
+      site: null
+    }
+  },
+  {
+    id: 4,
+    name: 'DMS-IF',
+    description: '',
+    skills: ['HTML', 'CSS', 'Javascript', 'Bootstrap'],
+    thumbnail: dmsifThumb,
+    link: 'https://dmsif.sefaz.salvador.ba.gov.br/',
+    company: {
+      name: 'IMAP',
+      image: ilegraLogo,
+      contract: 'CLT',
+      site: 'https://imap.org.br/'
+    }
+  },
+  {
+    id: 5,
+    name: 'ISS Bancos',
+    description: '',
+    skills: ['HTML', 'CSS', 'Javascript', 'Bootstrap'],
+    thumbnail: issBancosThumb,
+    link: 'https://iss-bancos.netlify.app/',
+    company: {
+      name: 'IMAP',
+      image: ilegraLogo,
+      contract: 'CLT',
+      site: 'https://imap.org.br/'
+    }
+  },
+  {
+    id: 6,
+    name: 'ASSOJAF',
+    description: '',
+    skills: ['HTML', 'CSS', 'Javascript'],
+    thumbnail: assojafThumb,
+    link: 'http://assojaf-rj.org.br/',
+    company: {
+      name: null,
+      image: null,
+      contract: null,
+      site: null
+    }
+  },
+  {
+    id: 7,
+    name: 'Home Flash Entregas',
+    description: '',
+    skills: ['HTML', 'CSS', 'Javascript', 'Bootstrap'],
+    thumbnail: flashThumb,
+    link: 'https://www.flashentregas.com.br/',
+    company: {
+      name: 'Flash Entregas',
+      image: flashLogo,
+      contract: 'PJ',
+      site: 'https://www.flashentregas.com.br/'
+    },
+  },
+  {
+    id: 8,
+    name: 'App Helloo Condominio',
+    description:
+      'Aplicativo mobile hibrido para gerenciamento de anuncios de condominios',
+    skills: [
+      'Typescript',
+      'React Native',
+      'Expo',
+      'Expo Push notifications',
+      'Styled components',
+      'Swr',
+      'Axios',
+      'Firebase',
+      'Algolia',
+      'Husky'
+    ],
+    thumbnail: hellooAppThumb,
+    link: 'https://play.google.com/store/apps/details?id=com.helloorg.helloo.condominio.production&hl=pt_BR&gl=US',
+    company: {
+      name: 'CROWD',
+      image: crowdLogo,
+      contract: 'PJ',
+      site: ''
+    }
+  }
+]
+
+export { experiences, profile, projects }
