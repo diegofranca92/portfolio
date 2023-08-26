@@ -2,40 +2,18 @@ import React, { useState, useEffect } from 'react'
 import { FaLaptopCode, FaListAlt, FaPersonBooth } from 'react-icons/fa'
 import BaseModal from './Modal'
 import CardExperience from './CardExperience'
-import { experiences, projects } from '../../db/db'
 import CardProject from './CardProject'
 import BaseTab from './Tabs'
 import { Button } from '@material-tailwind/react'
+import { api } from '~/utils/api'
 
-export default function MainContent(props) {
+export default function MainContent() {
   const [show, setShow] = useState(false)
   const [modalPersonal, setModalPersonal] = useState(false)
   const [modalCourious, setModalCourious] = useState(false)
-  const [experienceList, setExperienceList] = useState([])
-  const [projectList, setProjectList] = useState([])
 
-  async function getExperiences() {
-    //  try {
-    //   const { data } = await axios.get(
-    //     `${process.env.NEXT_PUBLIC_BASE_URL}/experience`,
-    //     {
-    //       headers: {
-    //         apikey: process.env.NEXT_PUBLIC_API_KEY,
-    //         Authorization: process.env.NEXT_PUBLIC_TOKEN
-    //       }
-    //     }
-    //   )
-    //  } catch (error) {
-    //   console.log(error);
-    //  }
-
-    setExperienceList(experiences)
-    setProjectList(projects)
-  }
-
-  useEffect(() => {
-    getExperiences()
-  }, [])
+  const getAllExperiences = api.example.getAllExperiences.useQuery();
+  const getAllProjects = api.example.getAllProjects.useQuery();
 
   return (
     <>
@@ -75,34 +53,34 @@ export default function MainContent(props) {
         show={show}
         size='md'
         title='Experiências'
-        toogleModal={e => {
+        toogleModal={(e:any) => {
           setShow(e.target.value)
         }}>
-        <Stack gap={4}>
-          {experienceList.map(experience => (
+        <div className='flex gap-4'>
+          {getAllExperiences.data?.map(experience => (
             <CardExperience key={experience.id} experience={experience} />
           ))}
-        </Stack>
+        </div>
       </BaseModal>
       <BaseModal
         show={modalPersonal}
         title='Projetos'
-        toogleModal={e => {
+        toogleModal={(e:any) => {
           setModalPersonal(e.target.value)
         }}>
-        <Row>
-          <BaseTab />
-          {projectList.map(project => (
-            <Col md={4} className='mb-4'>
-              <CardProject key={project.id} project={project} />
-            </Col>
+        <div className='flex'>
+          {/* <BaseTab /> */}
+          {getAllProjects.data?.map(project => (
+            <div className='mb-4' key={project.id}>
+              <CardProject project={project} />
+            </div>
           ))}
-        </Row>
+        </div>
       </BaseModal>
       <BaseModal
         show={modalCourious}
         title='Curiosidades'
-        toogleModal={e => {
+        toogleModal={(e:any) => {
           setModalCourious(e.target.value)
         }}>
         <h1>Curiosidades</h1>

@@ -1,26 +1,26 @@
-import { Modal, Button, CloseButton } from 'react-bootstrap'
+import { Dialog, DialogBody, DialogHeader, IconButton } from "@material-tailwind/react";
+import { FaTimes } from 'react-icons/fa'
+interface ModalProps {
+  size?: "md" | "lg" | "xl" | "xxl"
+  show: boolean
+  title: string
+  children: React.ReactNode
+  toogleModal: (e: any) => void
+}
 
-export default function BaseModal(props) {
+export default function BaseModal({ size, show, title, children, toogleModal }: ModalProps) {
   return (
-    <Modal
-      size={props.size ?? 'xl'}
-      show={props.show}
-      onHide={props.show}
-      backdrop='static'
-      keyboard={false}>
-      <Modal.Header className='bg-dark text-light'>
-        <Modal.Title>{props.title}</Modal.Title>
-        <CloseButton variant='white' onClick={props.toogleModal} />
-      </Modal.Header>
-      <Modal.Body className='bg-dark text-light'>{props.children}</Modal.Body>
-      {/* <Modal.Footer>
-        <Button variant='secondary' onClick={props.toogleModal}>
-          Close
-        </Button>
-        <Button variant='primary' onClick={props.toogleModal}>
-          Save Changes
-        </Button>
-      </Modal.Footer> */}
-    </Modal>
+    <Dialog
+      size={size ?? "xl"}
+      open={show}
+      handler={toogleModal}>
+      <DialogHeader className='bg-dark text-light justify-between'>
+        {title}
+        <IconButton variant="text" onClick={toogleModal}>
+          <FaTimes className="h-6 w-6 text-blue-gray-500" />
+        </IconButton>
+      </DialogHeader>
+      <DialogBody className='bg-dark text-light'>{children}</DialogBody>
+    </Dialog>
   )
 }

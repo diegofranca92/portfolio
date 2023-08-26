@@ -25,6 +25,10 @@ export const exampleRouter = createTRPCRouter({
   getAllExperiences: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.experience.findMany();
   }),
+  
+  getAllProjects: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.project.findMany();
+  }),
 
   getExperienceById: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.experience.findFirst();

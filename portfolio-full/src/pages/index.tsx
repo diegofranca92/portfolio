@@ -2,6 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import CardBio from "~/components/CardBio";
 import { CarouselDefault } from "~/components/Carrousel";
+import MainContent from "~/components/MainContent";
 import { api } from "~/utils/api";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
           {/* <AuthShowcase /> */}
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          
+          <MainContent />
         </div>
       </main>
     </>

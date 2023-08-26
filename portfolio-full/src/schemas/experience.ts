@@ -15,6 +15,7 @@ const Project = z.object({
 
 const Experience = z.object({
   name: z.string(),
+  description: z.string(),
   position: z.string(),
   skills: z.array(Skill),
   company: z.string(),

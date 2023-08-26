@@ -1,14 +1,16 @@
-import { Card, Stack, Badge, Button } from 'react-bootstrap'
-import Image from 'next/image'
 import { CarouselDefault } from './Carrousel'
-import { CardBody, CardFooter } from '@material-tailwind/react'
+import { Card, CardBody, CardFooter, Typography, Button } from '@material-tailwind/react'
+import { Project } from '~/schemas/experience'
 
-export default function CardProject(props) {
-  const project = props.project
+type CardProjectProps = {
+  project: Project
+}
+
+export default function CardProject({project}: CardProjectProps) {
 
   return (
-    <Card bg='secondary'>
-      <Stack>
+    <Card>
+      <div>
         {/* <Image
           height={200}
           style={{ maxWidth: '100%' }}
@@ -17,22 +19,22 @@ export default function CardProject(props) {
         <CarouselDefault />
         {/* <Carrousel /> */}
         <CardBody>
-          <Card.Title>{project?.name}</Card.Title>
-          <Card.Text>{project?.description}</Card.Text>
-          <Button target='_blank' href={project?.link} size="sm" variant='dark'>
+          <Typography>{project?.name}</Typography>
+          <Typography variant="small">{project?.description}</Typography>
+          <a target='_blank' href={project?.link}>
             Visitar
-          </Button>
+          </a>
         </CardBody>
         <CardFooter>
-          <Stack direction='horizontal' className='flex-wrap' gap={2}>
+          <div className='flex flex-wrap gap-4'>
             {project?.skills.map((skill, index) => (
-              <Badge key={index} bg='light' text='dark'>
-                {skill}
-              </Badge>
+              <span key={index} className='bg-blue-gray-500 p-4'>
+                {skill.name}
+              </span>
             ))}
-          </Stack>
+          </div>
         </CardFooter>
-      </Stack>
+      </div>
     </Card>
   )
 }
