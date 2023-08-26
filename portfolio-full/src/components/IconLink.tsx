@@ -1,10 +1,10 @@
+import { Tooltip } from '@material-tailwind/react'
 import { useState, useEffect } from 'react'
-import { Button, Tooltip, OverlayTrigger, Row, Stack } from 'react-bootstrap'
 import { FaLinkedin, FaGithub, FaCodepen, FaBehance } from 'react-icons/fa'
 
 export default function IconsLink() {
-  const [icons, setIcons] = useState([])
-  const listIcons = [
+  const [icons, setIcons] = useState<any[]>([])
+  const listIcons:any[] = [
     {
       link: 'https://www.linkedin.com/in/diego-fran%C3%A7a-aa66ba78/',
       icon: <FaLinkedin size={30} />,
@@ -32,17 +32,14 @@ export default function IconsLink() {
   }, [])
 
   return (
-    <Stack direction='horizontal' className='col-md-5 mx-auto mt-3'>
-      {icons.map((item, index)=> (
-        <OverlayTrigger
-          key={index}
-          placement={'top'}
-          overlay={<Tooltip>{item.title}</Tooltip>}>
+    <div className='flex col-md-5 mx-auto mt-3'>
+      {icons.map((item, index) => (
+        <Tooltip key={index} content={item.title}>
           <a className='px-3 text-light' href={item.link} target='_blank'>
             {item.icon}
           </a>
-        </OverlayTrigger>
+        </Tooltip>
       ))}
-    </Stack>
+    </div>
   )
 }

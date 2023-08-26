@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Row, Col, Stack } from 'react-bootstrap'
-import { FaLaptopCode, FaGrinWink, FaListAlt, FaPersonBooth } from 'react-icons/fa'
+import { FaLaptopCode, FaListAlt, FaPersonBooth } from 'react-icons/fa'
 import BaseModal from './Modal'
 import CardExperience from './CardExperience'
-import axios from 'axios'
 import { experiences, projects } from '../../db/db'
 import CardProject from './CardProject'
 import BaseTab from './Tabs'
+import { Button } from '@material-tailwind/react'
 
 export default function MainContent(props) {
   const [show, setShow] = useState(false)
@@ -40,16 +39,16 @@ export default function MainContent(props) {
 
   return (
     <>
-      <Row xs={1} md={3} className='flex-md-nowrap mb-5 p-4'>
+      <div className='flex-md-nowrap mb-5 p-4 gap-12'>
         <Button
-          variant='outline-secondary'
+          color='blue-gray'
           className='p-4 rounded-0'
           onClick={() => setShow(true)}>
           <FaListAlt className='d-block mx-auto mb-2' size={40} />
           Experiências
         </Button>
         <Button
-          variant='outline-secondary'
+          color='blue-gray'
           className='p-4 rounded-0'
           onClick={() => setModalPersonal(true)}>
           <FaLaptopCode className='d-block mx-auto mb-2' size={40} />
@@ -64,13 +63,13 @@ export default function MainContent(props) {
         </Button> */}
         <Button
           disabled
-          variant='outline-secondary'
+          color='blue-gray'
           className='p-4 rounded-0'
           onClick={() => setModalCourious(true)}>
           <FaPersonBooth className='d-block mx-auto mb-2' size={40} />
           Destaques (em construção)
         </Button>
-      </Row>
+      </div>
 
       <BaseModal
         show={show}

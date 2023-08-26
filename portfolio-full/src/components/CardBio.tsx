@@ -1,24 +1,33 @@
-import { Card, Stack } from 'react-bootstrap'
+import { Avatar, Card, CardBody, Typography } from '@material-tailwind/react'
 import IconsLink from './IconLink'
-import { useEffect, useState } from 'react'
+import { Profile } from '~/schemas/profile';
+import imgPerfil from '~/assets/images/perfil.jpeg'
+interface CardProps {
+  profile: Profile
+}
 
-export default function CardBio(props) {
-  // const [bio, setBio] = useState('')
-  const perfil = props.perfil
-  // let halfBio = perfil.bio.slice(0, 432)
-  // useEffect(() => {
-  //   setBio(halfBio)
-  // }, [])
+export default function CardBio({ profile }: CardProps) {
   return (
-    <Card bg='secondary'>
-      <Stack gap={2}>
-        <Card.Body className='text-light'>
-          <Card.Title>Um pouco sobre mim</Card.Title>
-          {perfil?.bio}
-          {/* <button onClick={() => setBio(perfil?.bio)}>Ver mais</button> */}
+    <div className="flex gap-8 mx-8">
+      <div className='w-4/12 text-center'>
+        <Avatar className='w-[250px] h-[250px]' src={imgPerfil.src} />
+        <Typography variant="h2" color='white'>{profile.name}</Typography>
+        <Typography variant="h6" color="gray" className="font-normal">
+          {profile.role}
+        </Typography>
+      </div>
+      <Card color='blue-gray'>
+        <CardBody className='text-light'>
+          <Typography variant="h5" color="blue-gray" className="mb-2">
+            Um pouco sobre mim
+          </Typography>
+          <Typography color="blue-gray" className="mb-2">
+            {profile?.bio}
+          </Typography>
+
           <IconsLink />
-        </Card.Body>
-      </Stack>
-    </Card>
+        </CardBody>
+      </Card>
+    </div>
   )
 }

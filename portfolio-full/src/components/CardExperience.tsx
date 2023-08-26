@@ -25,8 +25,8 @@ export default function CardExperience(props) {
             </Col>
           </Row>
         </Card.Header>
-        <Card.Body>{experience?.description}</Card.Body>
-        <Card.Footer>
+        <CardBody>{experience?.description}</CardBody>
+        <CardFooter>
           <Stack direction='horizontal' className='flex-wrap' gap={2}>
             {experience?.skills.map((skill, index) => (
               <Badge key={index} bg='light' text='dark'>
@@ -34,7 +34,7 @@ export default function CardExperience(props) {
               </Badge>
             ))}
           </Stack>
-        </Card.Footer>
+        </CardFooter>
       </Stack>
     </Card>
   )

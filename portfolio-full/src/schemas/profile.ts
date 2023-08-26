@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
-export const Profile = z.object({
-  name: z.string(),
-  role: z.string(),
-  bio: z.string(),
-  formation: z.string(),
+const Profile = z.object({
+  name: z.string().optional(),
+  role: z.string().optional(),
+  bio: z.string().optional(),
+  formation: z.string().optional(),
 });
 
-type Profile = z.infer<typeof Profile>;
+export type Profile = z.infer<typeof Profile>;

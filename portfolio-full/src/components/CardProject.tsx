@@ -1,6 +1,7 @@
 import { Card, Stack, Badge, Button } from 'react-bootstrap'
 import Image from 'next/image'
-import Carrousel from './Carrousel'
+import { CarouselDefault } from './Carrousel'
+import { CardBody, CardFooter } from '@material-tailwind/react'
 
 export default function CardProject(props) {
   const project = props.project
@@ -8,20 +9,21 @@ export default function CardProject(props) {
   return (
     <Card bg='secondary'>
       <Stack>
-        <Image
+        {/* <Image
           height={200}
           style={{ maxWidth: '100%' }}
           src={project?.thumbnail}
-        />
+        /> */}
+        <CarouselDefault />
         {/* <Carrousel /> */}
-        <Card.Body>
+        <CardBody>
           <Card.Title>{project?.name}</Card.Title>
           <Card.Text>{project?.description}</Card.Text>
           <Button target='_blank' href={project?.link} size="sm" variant='dark'>
             Visitar
           </Button>
-        </Card.Body>
-        <Card.Footer>
+        </CardBody>
+        <CardFooter>
           <Stack direction='horizontal' className='flex-wrap' gap={2}>
             {project?.skills.map((skill, index) => (
               <Badge key={index} bg='light' text='dark'>
@@ -29,7 +31,7 @@ export default function CardProject(props) {
               </Badge>
             ))}
           </Stack>
-        </Card.Footer>
+        </CardFooter>
       </Stack>
     </Card>
   )

@@ -1,11 +1,11 @@
 import { z } from "zod";
 
-export const Skill = z.object({
+const Skill = z.object({
   name: z.string(),
   duration: z.string(),
 });
 
-export const Project = z.object({
+const Project = z.object({
   name: z.string(),
   description: z.string(),
   company: z.string(),
@@ -13,7 +13,7 @@ export const Project = z.object({
   link: z.string().url(),
 });
 
-export const Experience = z.object({
+const Experience = z.object({
   name: z.string(),
   position: z.string(),
   skills: z.array(Skill),
@@ -22,6 +22,6 @@ export const Experience = z.object({
   projects: z.array(Project),
 });
 
-type Experience = z.infer<typeof Experience>;
-type Project = z.infer<typeof Project>;
-type Skill = z.infer<typeof Skill>;
+export type Experience = z.infer<typeof Experience>;
+export type Project = z.infer<typeof Project>;
+export type Skill = z.infer<typeof Skill>;

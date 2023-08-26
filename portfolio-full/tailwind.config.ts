@@ -14,6 +14,15 @@ export default withMT({
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    avatar: {
+      sizes: {
+        test: {
+          width: "w-[250px]",
+          height: "h-[250px]",
+          borderRadius: "rounded-full",
+        },
+      }
+    }
   },
   plugins: [],
 });
