@@ -1,7 +1,9 @@
+import { Typography } from "@material-tailwind/react";
+
 export default function Footer() {
   return (
     <footer>
-      <p className='text-secondary text-center w-75 mx-auto'>
+      <Typography color="gray" variant="paragraph" className="text-lg">
         <small>
           <em>
             Tente uma, duas, três vezes e se possível tente a quarta, a quinta e
@@ -10,7 +12,7 @@ export default function Footer() {
             a onde a maioria não chega, faça o que a maioria não faz. Bill Gates
           </em>
         </small>
-      </p>
+      </Typography>
     </footer>
   )
 }

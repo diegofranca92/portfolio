@@ -17,7 +17,7 @@ export default function MainContent() {
 
   return (
     <>
-      <div className='flex-md-nowrap mb-5 p-4 gap-12'>
+      <div className='flex-md-nowrap mb-5 p-4 gap-12 flex justify-around'>
         <Button
           color='blue-gray'
           className='p-4 rounded-0'

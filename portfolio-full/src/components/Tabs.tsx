@@ -1,29 +1,58 @@
-import Tab from 'react-bootstrap/Tab'
-import Tabs from 'react-bootstrap/Tabs'
-
-function BaseTab() {
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+ 
+export function BaseTab() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    }
+  ];
+ 
   return (
-    <Tabs
-      defaultActiveKey='profile'
-      id='justify-tab-example'
-      className='mb-3'
-      justify>
-      {/* {props.items.map(tab => (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+         {/* {props.items.map(tab => (
         <Tab eventKey={tab.eventKey} title={tab.title}>
           {tab.children}
         </Tab>
       ))} */}
-      <Tab eventKey='profile' title='Profile'>
-        Tab content for Profile
-      </Tab>
-      <Tab eventKey='longer-tab' title='Loooonger Tab'>
-        Tab content for Loooonger Tab
-      </Tab>
-      <Tab eventKey='contact' title='Contact'>
-        Tab content for Contact
-      </Tab>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
     </Tabs>
-  )
+  );
 }
 
 export default BaseTab
