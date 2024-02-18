@@ -69,7 +69,7 @@ export default function MainContent() {
           setModalPersonal(e.target.value)
         }}>
         <div className='flex'>
-          {/* <BaseTab /> */}
+          <BaseTab />
           {getAllProjects.data?.map(project => (
             <div className='mb-4' key={project.id}>
               <CardProject project={project} />
